@@ -1,0 +1,81 @@
+* {
+	box-sizing: border-box;
+}
+body {
+  margin: 0px;
+}
+
+.title {
+	text-align: center;
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+.box-container {
+	text-align: center;
+}
+.box {
+	display: inline-block;
+	background-color: gray;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 20px;
+	width: 300px;
+	height: 400px;
+}
+#helper {
+	vertical-align: middle;
+	line-height: 400px;
+	background-color: red;
+	height: 100%;
+}
+#helper-box {
+	vertical-align: middle;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+.gender-name {
+	vertical-align: middle;
+	font-size: 25px;
+}
+#gender-sel-container {
+	vertical-align: middle;
+	margin-bottom: 15px;
+
+}
+.select {
+	display: inline-block;
+	vertical-align: middle;
+	size: 30px;
+}
+
+.input-container {
+	text-align: center;
+	margin-bottom: 15px;
+}
+.input-name {
+	text-align: center;
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+	font-size: 30px;
+}
+.input {
+	text-align: center;
+	width: 50%;
+	font-size: 30px;
+}
+#submit-btn {
+	margin-top: 15px;
+	padding: 15px 30px;
+	font-size: 30px;
+	border-radius: 10px;
+}
+
+#result {
+	vertical-align: middle;
+	text-align: center;
+	font-size: 200px;
+}
