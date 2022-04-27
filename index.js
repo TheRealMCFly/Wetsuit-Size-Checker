@@ -1,30 +1,85 @@
-const wetsuitSizeInfo = {
+const sizeInfo = {
 	male: [
 		{
-		weight: [40, 50],
-		height: [151, 160],
-		size: 'XS'
+		height: [167, 172],
+		weight: [
+			{
+				range: [53, 60],
+				size: 'XS'
+			},
+			{
+				range: [61, 78],
+				size: 'S'
+			},
+			{
+				range: [69, 79],
+				size: 'M'
+			},
+			{
+				range: [77, 84],
+				size: 'L'
+			}
+		]
 		},
 		{
-		weight: [61, 69],
-		height: [168, 172],
-		size: 'S'
-		},
-		{
-		weight: [70, 77],
 		height: [173, 178],
-		size: 'M'
+		weight: [
+			{
+				range: [62, 69],
+				size: 'S'
+			},
+			{
+				range: [70, 77],
+				size: 'M'
+			},
+			{
+				range: [78, 85],
+				size: 'L'
+			},
+			{
+				range: [86, 93],
+				size: 'XL'
+			}
+		]
 		},
 		{
-		weight: [78, 85],
-		height: [178, 183],
-		size: 'L'
+		height: [179, 183],
+		weight: [
+			{
+				range: [71, 78],
+				size: 'M'
+			},
+			{
+				range: [79, 86],
+				size: 'L'
+			},
+			{
+				range: [87, 94],
+				size: 'XL'
+			},
+			{
+				range: [95, 102],
+				size: 'XXL'
+			}
+		]
 		},
 		{
-		weight: [86, 93],
-		height: [180, 188],
-		size: 'XL'
-		}
+			height: [184, 188],
+			weight: [
+				{
+					range: [78, 85],
+					size: 'L'
+				},
+				{
+					range: [86, 93],
+					size: 'XL'
+				},
+				{
+					range: [94, 101],
+					size: 'XXL'
+				},
+			]
+			},
 	]
 }
 
@@ -39,10 +94,16 @@ function wetsuitSizeGet(gender, weight, height) {
 	if (!gender) {
 		return alert('성별을 선택해 주세요')
 	} else {
-	const x = wetsuitSizeInfo[gender].find(element => 
-		(weight >= element.weight[0] && weight <= element.weight[1]) &&
-		(height >= element.height[0] && height <= element.height[1]));
+	const heightCatagory = sizeInfo[gender].find(element =>
+		height >= element.height[0] && height <= element.height[1]);
+		console.log(heightCatagory)
+		if (!heightCatagory) {
+			alert('해당 정보에 맞는 사이즈가 없습니다.')
+		} else {
+		const x = heightCatagory.weight.find(element =>
+			weight >= element.range[0] && weight <= element.range[1]);
 		x? result.textContent = x.size: alert('해당 정보에 맞는 사이즈가 없습니다.');
+		}
 	}
 }
 
